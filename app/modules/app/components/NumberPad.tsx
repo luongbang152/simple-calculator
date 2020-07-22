@@ -19,7 +19,7 @@ export default function NumberPad({ items, onPress }: Props) {
 					{row.map((n, i) => (
 						<NumberButton
 							key={`c${i}`}
-							style={n.columns ? { flex: n.columns } : undefined}
+							style={n.columns ? { flex: n.columns } : n.buttonStyle}
 							title={n.title}
 							icon={n.icon}
 							onPress={() => {

@@ -27,3 +27,7 @@ export const getScreenSize = () => {
 	const width = getDeviceWidth();
 	return { height, width };
 };
+
+export const getSizeRatio = () => {
+	return getDeviceWidth() / 360;
+};

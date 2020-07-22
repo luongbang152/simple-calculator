@@ -3,12 +3,12 @@ import { View, StyleSheet, SafeAreaView } from 'react-native';
 
 import R from 'res/R';
 import { NumberPadItem } from 'schema';
-import { defaultLayout } from 'config/NumberPadLayout';
+import defaultLayout from 'config/NumberPadLayout';
 
 import { NumberPad, ResultDisplay } from '../components';
 
 export default function Calculator() {
-	const [numberPadItems] = useState<NumberPadItem[][]>(defaultLayout);
+	const [numberPadItems] = useState<NumberPadItem[][]>(defaultLayout());
 
 	return (
 		<View style={[R.styles.fillFlex, styles.container]}>

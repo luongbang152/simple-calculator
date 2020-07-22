@@ -27,8 +27,8 @@ const Screens: {
 			return Splash;
 		},
 	},
-	Home: {
-		name: 'Home',
+	Calculator: {
+		name: 'Calculator',
 		component: () => {
 			return Calculator;
 		},

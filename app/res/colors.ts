@@ -3,9 +3,10 @@ const colors = {
 	backgroundDark: '#433437',
 	backgroundLight: '#FFFFFF',
 	resultTextColor: '#FFFFFF',
-	numberPadActionColor: '#525252',
 	numberPadTextColor: '#292929',
 	numberPadBorderColor: '#921029',
+	operationButtonBgColor: '#F2274F',
+	operationButtonIconColor: '#FFFFFF',
 };
 
 export default colors;

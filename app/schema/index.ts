@@ -13,8 +13,9 @@ export type NumberPadType = 'number' | 'expression' | 'action';
 export type NumberPadItem = {
 	type: NumberPadType;
 	title?: string;
-	icon?: ReactNode;
+	icon?: (size: number) => ReactNode;
 	expression?: string;
 	columns?: number;
 	action?: () => void;
+	buttonStyle?: StyleProp<ViewStyle>;
 };

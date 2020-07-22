@@ -1,0 +1,63 @@
+{
+	"name": "tracnghiem",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"android": "react-native run-android",
+		"ios": "react-native run-ios",
+		"start": "react-native start",
+		"test": "jest",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"images": "node app/scripts/images.js",
+		"anims": "node app/scripts/anims.js"
+	},
+	"dependencies": {
+		"@react-native-community/async-storage": "^1.11.0",
+		"@react-native-community/masked-view": "^0.1.10",
+		"@react-navigation/native": "^5.5.1",
+		"@react-navigation/stack": "^5.5.1",
+		"react": "^16.13.1",
+		"react-native": "^0.63.1",
+		"react-native-device-info": "^5.6.1",
+		"react-native-extra-dimensions-android": "^1.2.5",
+		"react-native-gesture-handler": "^1.6.1",
+		"react-native-reanimated": "^1.9.0",
+		"react-native-safe-area-context": "^3.0.2",
+		"react-native-screens": "^2.8.0",
+		"react-native-vector-icons": "^7.0.0",
+		"react-redux": "^7.2.0",
+		"redux": "^4.0.5",
+		"redux-persist": "^6.0.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/runtime": "^7.6.2",
+		"@react-native-community/eslint-config": "^2.0.0",
+		"@types/jest": "^26.0.5",
+		"@types/react-native": "^0.63.1",
+		"@types/react-native-vector-icons": "^6.4.5",
+		"@types/react-redux": "^7.1.9",
+		"@types/react-test-renderer": "16.9.2",
+		"@typescript-eslint/eslint-plugin": "^3.7.0",
+		"@typescript-eslint/parser": "^3.7.0",
+		"babel-jest": "^26.1.0",
+		"babel-plugin-module-resolver": "^4.0.0",
+		"eslint": "^7.5.0",
+		"jest": "^26.1.0",
+		"metro-react-native-babel-preset": "^0.61.0",
+		"prettier": "^2.0.4",
+		"react-test-renderer": "^16.13.1",
+		"typescript": "^3.8.3"
+	},
+	"jest": {
+		"preset": "react-native",
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		]
+	}
+}

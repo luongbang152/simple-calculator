@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.tracnghiem"
+        applicationId "com.bangdev.simplecalculator"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

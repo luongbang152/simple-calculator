@@ -17,7 +17,7 @@
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
                BuildableName = "tracnghiem-tvOS.app"
                BlueprintName = "tracnghiem-tvOS"
-               ReferencedContainer = "container:tracnghiem.xcodeproj">
+               ReferencedContainer = "container:simplecalculator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
                BuildableName = "tracnghiem-tvOSTests.xctest"
                BlueprintName = "tracnghiem-tvOSTests"
-               ReferencedContainer = "container:tracnghiem.xcodeproj">
+               ReferencedContainer = "container:simplecalculator.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,7 +57,7 @@
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
             BuildableName = "tracnghiem-tvOS.app"
             BlueprintName = "tracnghiem-tvOS"
-            ReferencedContainer = "container:tracnghiem.xcodeproj">
+            ReferencedContainer = "container:simplecalculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
             BuildableName = "tracnghiem-tvOS.app"
             BlueprintName = "tracnghiem-tvOS"
-            ReferencedContainer = "container:tracnghiem.xcodeproj">
+            ReferencedContainer = "container:simplecalculator.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

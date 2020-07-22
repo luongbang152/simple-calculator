@@ -1,6 +1,3 @@
-const images = {
-	appLogo: require('./images/App_Logo.png'),
-	watermarks: require('./images/Watermarks.png'),
-};
+const images = {};
 
 export default images;

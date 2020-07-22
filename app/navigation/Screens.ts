@@ -1,7 +1,7 @@
 import React from 'react';
 import { StackNavigationOptions } from '@react-navigation/stack';
 
-import { Splash } from 'modules/app';
+import { Splash, Calculator } from 'modules/app';
 
 import { ParamList } from './ParamList';
 
@@ -27,12 +27,12 @@ const Screens: {
 			return Splash;
 		},
 	},
-	// Home: {
-	// 	name: 'Home',
-	// 	component: () => {
-	// 		return TabBar;
-	// 	},
-	// },
+	Home: {
+		name: 'Home',
+		component: () => {
+			return Calculator;
+		},
+	},
 };
 
 export default Screens;

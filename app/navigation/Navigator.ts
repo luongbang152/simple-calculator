@@ -66,8 +66,7 @@ export default {
 	 * Module App
 	 */
 	openApp: () => {
-		console.log('Open app');
-		//_navigator?.dispatch(StackActions.replace('Home'));
+		_navigator?.dispatch(StackActions.replace('Home'));
 	},
 	// openMap: () => {
 	// 	navigate('Map');

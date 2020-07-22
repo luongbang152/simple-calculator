@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 
 import R from 'res/R';
@@ -29,15 +29,7 @@ export default function Splash() {
 				{
 					backgroundColor: R.colors.primary,
 				},
-			]}>
-			<View style={[R.styles.fillFlex, R.styles.centerizeContent]}>
-				<Text style={{ fontSize: 30, fontWeight: 'bold', color: '#FFF' }}>
-					Calculator
-				</Text>
-			</View>
-			<View style={[R.styles.centerizeContent, { height: 100 }]}>
-				<ActivityIndicator size="large" color="#FFF" />
-			</View>
-		</View>
+			]}
+		/>
 	);
 }

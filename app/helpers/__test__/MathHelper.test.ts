@@ -32,6 +32,21 @@ describe('Test check operation in expression', () => {
 describe('Test add NumberPadItem', () => {
 	const allTestCases: { name: string; testCases: CalcTestCase[] }[] = [
 		{
+			name: 'Press 9,0,.,1,.,+,,.,5,=',
+			testCases: [
+				{ args: ['', Numbers[9]], expect: '9' },
+				{ args: ['9', Numbers[0]], expect: '90' },
+				{ args: ['90', Numbers[10]], expect: '90.' },
+				{ args: ['90.', Numbers[1]], expect: '90.1' },
+				{ args: ['90.1', Numbers[10]], expect: '90.1' },
+				{ args: ['90.1', OperationAdd], expect: '90.1+' },
+				{ args: ['90.1+', Numbers[10]], expect: '90.1+0.' },
+				{ args: ['90.1+0.', Numbers[5]], expect: '90.1+0.5' },
+				{ args: ['90.1+0.5', Numbers[10]], expect: '90.1+0.5' },
+				{ args: ['90.1+0.5', OperationCalc], expect: '90.6' },
+			],
+		},
+		{
 			name: 'Press 9,0,+,1,=',
 			testCases: [
 				{ args: ['', Numbers[9]], expect: '9' },

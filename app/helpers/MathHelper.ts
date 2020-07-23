@@ -14,7 +14,8 @@ export const addItemToExpression = (
 		return item.type === 'number' ? item.expression : '';
 	}
 
-	if (haveOperation(currentExp) && item.type === 'operation') {
+	const hadOperation = haveOperation(currentExp);
+	if (hadOperation && item.type === 'operation') {
 		// check last char is operation or not
 		if (haveOperation(currentExp.charAt(currentExp.length - 1))) {
 			const removedOperation = currentExp.slice(0, currentExp.length - 1);
@@ -26,10 +27,25 @@ export const addItemToExpression = (
 				return 'error';
 			}
 			if (result > parseInt(result)) {
-				result = result.toFixed(3);
+				result = Number(result.toFixed(3));
 			}
 			const operationToAdd = item.expression === '=' ? '' : item.expression;
 			return `${result}${operationToAdd}`;
+		}
+	}
+	if (item.expression === '.') {
+		let lastNumber = currentExp;
+		if (hadOperation) {
+			const numbers = splitExpIntoNumbers(currentExp);
+			if (numbers[1] === '') {
+				return `${currentExp}0${item.expression}`;
+			} else {
+				lastNumber = numbers[1];
+			}
+		}
+		const haveDot = lastNumber.indexOf('.') !== -1;
+		if (haveDot) {
+			return `${currentExp}`;
 		}
 	}
 	return `${currentExp}${item.expression}`;
@@ -43,7 +59,7 @@ export const numberToDisplay = (expression: string) => {
 	if (expression === 'error') {
 		return 'error';
 	}
-	const numbers = expression.split(/[^$,.\d]/).filter((n) => n !== '');
+	const numbers = splitExpIntoNumbers(expression).filter((n) => n !== '');
 	if (numbers.length == 0) {
 		return '0';
 	}
@@ -52,4 +68,8 @@ export const numberToDisplay = (expression: string) => {
 	const num = Number(lastNum);
 	const resultDisplay = `${num}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 	return haveDot ? `${resultDisplay}.` : resultDisplay;
+};
+
+const splitExpIntoNumbers = (expression: string) => {
+	return expression.split(/[^$,.\d]/);
 };

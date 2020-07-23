@@ -9,7 +9,7 @@ export type AppSession = {
 	firstTimeAt?: number;
 };
 
-export type NumberPadType = 'number' | 'expression' | 'action';
+export type NumberPadType = 'number' | 'operation' | 'action';
 export type NumberPadItem = {
 	type: NumberPadType;
 	title?: string;

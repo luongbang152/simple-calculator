@@ -42,7 +42,7 @@ export const haveOperation = (expression: string) => {
 export const numberToDisplay = (expression: string) => {
 	const numbers = expression.split(/[^$,.\d]/).filter((n) => n !== '');
 	if (numbers.length == 0) {
-		return '';
+		return '0';
 	}
 	const lastNum = numbers[numbers.length - 1];
 	const num = Number(lastNum);

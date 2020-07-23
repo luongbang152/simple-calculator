@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { ApplicationState } from 'schema';
-import sessionReducer from './sessionReducer';
+import expressionReducer from './expressionReducer';
 
 export default combineReducers<ApplicationState>({
-	session: sessionReducer,
+	currentExpression: expressionReducer,
 });

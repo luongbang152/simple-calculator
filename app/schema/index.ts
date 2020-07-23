@@ -2,11 +2,7 @@ import { StyleProp, ViewStyle } from 'react-native';
 import { ReactNode } from 'react';
 
 export type ApplicationState = {
-	session: AppSession;
-};
-
-export type AppSession = {
-	firstTimeAt?: number;
+	currentExpression: string;
 };
 
 export type NumberPadType = 'number' | 'operation' | 'action';
@@ -16,6 +12,6 @@ export type NumberPadItem = {
 	icon?: (size: number) => ReactNode;
 	expression?: string;
 	columns?: number;
-	action?: () => void;
+	action?: 'clear';
 	buttonStyle?: StyleProp<ViewStyle>;
 };

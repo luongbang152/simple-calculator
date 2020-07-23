@@ -1,13 +1,31 @@
-import { AppSession } from 'schema';
+import { NumberPadItem } from 'schema';
+import { MathHelper } from 'helpers';
 
-export const SESSION_UPDATE = 'session/Update';
-export type SESSION_UPDATE = typeof SESSION_UPDATE;
-export interface SessionUpdate {
-	type: SESSION_UPDATE;
-	session: AppSession;
+export const EXPRESSION_UPDATE = 'numberPad/Add';
+export type EXPRESSION_UPDATE = typeof EXPRESSION_UPDATE;
+export interface ExpressionUpdate {
+	type: EXPRESSION_UPDATE;
+	expression: string;
 }
 
-export const openFirstTime = (): SessionUpdate => ({
-	type: SESSION_UPDATE,
-	session: { firstTimeAt: new Date().getTime() },
-});
+const updateExpression = (expression: string): ExpressionUpdate => {
+	return { type: EXPRESSION_UPDATE, expression };
+};
+
+export const addNumberPad = (item: NumberPadItem) => {
+	return (dispatch, getState) => {
+		if (item.type == 'action') {
+			switch (item.action) {
+				case 'clear':
+					dispatch(updateExpression(''));
+			}
+			return;
+		}
+		const currentExpression = getState().currentExpression;
+		const nextExpression = MathHelper.addItemToExpression(
+			currentExpression,
+			item,
+		);
+		dispatch(updateExpression(nextExpression));
+	};
+};

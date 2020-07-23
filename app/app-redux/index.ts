@@ -1,20 +1,12 @@
-import AsyncStorage from '@react-native-community/async-storage';
-import { createStore } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-import { ApplicationState } from 'schema';
 import reducers from './reducers';
 
-const persistedReducer = persistReducer<ApplicationState>(
-	{
-		key: 'root',
-		storage: AsyncStorage,
-		stateReconciler: autoMergeLevel2,
-		whitelist: ['session'],
-	},
-	reducers,
-);
-
-export const store = createStore(persistedReducer);
-export const persistor = persistStore(store);
+export const store = __DEV__
+	? createStore(
+			reducers,
+			compose(applyMiddleware(thunk), applyMiddleware(logger)),
+	  )
+	: createStore(reducers, applyMiddleware(thunk));

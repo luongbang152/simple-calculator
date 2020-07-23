@@ -1,26 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
 import R from 'res/R';
-import { NumberPadItem } from 'schema';
+import { NumberPadItem, ApplicationState } from 'schema';
 import defaultLayout from 'config/NumberPadLayout';
+import { addNumberPad } from 'app-redux/actions';
+import { MathHelper } from 'helpers';
 
 import { NumberPad, ResultDisplay } from '../components';
 
 export default function Calculator() {
+	const dispatch = useDispatch();
+	const currentExpression = useSelector(
+		(state: ApplicationState) => state.currentExpression,
+	);
 	const [numberPadItems] = useState<NumberPadItem[][]>(defaultLayout());
+
+	const onPressNumberPad = (n: NumberPadItem) => {
+		dispatch(addNumberPad(n));
+	};
 
 	return (
 		<View style={[R.styles.fillFlex, styles.container]}>
 			<SafeAreaView style={[R.styles.fillFlex, styles.safeContainer]}>
-				<ResultDisplay text="000" />
-				<NumberPad
-					items={numberPadItems}
-					onPress={(n) => {
-						console.log('Pressed button', n);
-						// do something
-					}}
-				/>
+				<ResultDisplay text={MathHelper.numberToDisplay(currentExpression)} />
+				<NumberPad items={numberPadItems} onPress={onPressNumberPad} />
 			</SafeAreaView>
 		</View>
 	);

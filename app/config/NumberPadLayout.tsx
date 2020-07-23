@@ -9,9 +9,7 @@ export const ClearAction: NumberPadItem = {
 	type: 'action',
 	title: 'clear',
 	columns: 3,
-	action: () => {
-		// clear expression
-	},
+	action: 'clear',
 };
 
 /**

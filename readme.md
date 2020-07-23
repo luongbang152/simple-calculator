@@ -15,6 +15,10 @@
 3. Open ios folder
 4. Run: pod install
 
+## Run Test
+
+- yarn test
+
 ## Run Application
 
 ### Android:

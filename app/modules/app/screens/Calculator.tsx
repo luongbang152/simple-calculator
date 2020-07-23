@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#000',
 	},
 	safeContainer: {
-		backgroundColor: '#FFF',
+		backgroundColor: '#000',
 	},
 });

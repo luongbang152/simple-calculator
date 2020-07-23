@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
 	container: {
 		borderWidth: 0.5,
 		borderColor: R.colors.numberPadBorderColor,
+		backgroundColor: R.colors.backgroundLight,
 	},
 	numberText: {
 		color: R.colors.numberPadTextColor,

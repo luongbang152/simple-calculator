@@ -26,6 +26,7 @@ export const addNumberPad = (item: NumberPadItem) => {
 			currentExpression,
 			item,
 		);
+		console.log('Next Exp', nextExpression);
 		dispatch(updateExpression(nextExpression));
 	};
 };

@@ -66,11 +66,11 @@ describe('Test add NumberPadItem', () => {
 				{ args: ['100*', Numbers[3]], expect: '100*3' },
 				{ args: ['100*3', OperationDivide], expect: '300/' },
 				{ args: ['300/', Numbers[9]], expect: '300/9' },
-				{ args: ['300/9', OperationAdd], expect: '33.3333+' },
-				{ args: ['33.3333+', Numbers[9]], expect: '33.3333+9' },
-				{ args: ['33.3333+9', OperationMultiply], expect: '42.3333*' },
-				{ args: ['42.3333*', Numbers[0]], expect: '42.3333*0' },
-				{ args: ['42.3333*0', OperationCalc], expect: '0' },
+				{ args: ['300/9', OperationAdd], expect: '33.333+' },
+				{ args: ['33.333+', Numbers[9]], expect: '33.333+9' },
+				{ args: ['33.333+9', OperationMultiply], expect: '42.333*' },
+				{ args: ['42.333*', Numbers[0]], expect: '42.333*0' },
+				{ args: ['42.333*0', OperationCalc], expect: '0' },
 			],
 		},
 		{
@@ -108,11 +108,16 @@ describe('Test add NumberPadItem', () => {
 describe('Test display only last number in expression', () => {
 	const testCases: { arg: string; expect: string }[] = [
 		{ arg: '123', expect: '123' },
-		{ arg: '123.2222', expect: '123.2222' },
+		{ arg: '123.', expect: '123.' },
+		{ arg: '123.222', expect: '123.222' },
 		{ arg: '123.22+', expect: '123.22' },
 		{ arg: '123.22+100', expect: '100' },
 		{ arg: '123.22/0999', expect: '999' },
 		{ arg: '123.22*099.99', expect: '99.99' },
+		{ arg: 'error', expect: 'error' },
+		{ arg: '1000000.123', expect: '1,000,000.123' },
+		{ arg: '10000', expect: '10,000' },
+		{ arg: '10000.123', expect: '10,000.123' },
 	];
 	testCases.forEach((t) => {
 		test(t.arg, () => {

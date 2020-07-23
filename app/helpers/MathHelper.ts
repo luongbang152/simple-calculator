@@ -26,7 +26,7 @@ export const addItemToExpression = (
 				return 'error';
 			}
 			if (result > parseInt(result)) {
-				result = result.toFixed(4);
+				result = result.toFixed(3);
 			}
 			const operationToAdd = item.expression === '=' ? '' : item.expression;
 			return `${result}${operationToAdd}`;
@@ -40,11 +40,16 @@ export const haveOperation = (expression: string) => {
 };
 
 export const numberToDisplay = (expression: string) => {
+	if (expression === 'error') {
+		return 'error';
+	}
 	const numbers = expression.split(/[^$,.\d]/).filter((n) => n !== '');
 	if (numbers.length == 0) {
 		return '0';
 	}
 	const lastNum = numbers[numbers.length - 1];
+	const haveDot = lastNum.charAt(lastNum.length - 1) === '.';
 	const num = Number(lastNum);
-	return `${num}`;
+	const resultDisplay = `${num}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	return haveDot ? `${resultDisplay}.` : resultDisplay;
 };

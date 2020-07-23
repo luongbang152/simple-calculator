@@ -1,6 +1,6 @@
 import { EXPRESSION_UPDATE, ExpressionUpdate } from '../actions';
 
-const initState: string = '0';
+const initState: string = '';
 
 export default function (state = initState, action: ExpressionUpdate) {
 	switch (action.type) {

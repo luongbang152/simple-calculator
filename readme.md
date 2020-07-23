@@ -30,7 +30,12 @@
 - open ios/simplecalculator.xcworkspace
 - Build and run the app on simulator
 
-### Contacts
+## Response to keyboard input
+
+- For challenge "response to keyboard input", please use iOS simulator and make sure option "I/O > Keyboard > Connect hardware keyboard" is checked
+- Use Mac keyboard to test
+
+## Contacts
 
 Feel free to contact me at
 Email: luongbang152@gmail.com

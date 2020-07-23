@@ -1,6 +1,9 @@
 package com.bangdev.simplecalculator;
 
+import android.view.KeyEvent;
+
 import com.facebook.react.ReactActivity;
+import com.github.kevinejohn.keyevent.KeyEventModule;
 
 public class MainActivity extends ReactActivity {
 
@@ -11,5 +14,17 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "simplecalculator";
+  }
+
+  @Override
+  public boolean onKeyDown(int keyCode, KeyEvent event) {
+    KeyEventModule.getInstance().onKeyDownEvent(keyCode, event);
+    return super.onKeyDown(keyCode, event);
+  }
+
+  @Override
+  public boolean onKeyUp(int keyCode, KeyEvent event) {
+    KeyEventModule.getInstance().onKeyUpEvent(keyCode, event);
+    return super.onKeyUp(keyCode, event);
   }
 }
